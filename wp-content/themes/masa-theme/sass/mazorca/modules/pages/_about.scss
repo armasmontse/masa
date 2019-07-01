@@ -1,0 +1,308 @@
+.about {
+    background-color: black;
+    // width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+
+    //espacio de menu
+
+    // padding: 10px 114px 10px 10px;
+    // padding: 10px 90px 10px 10px;
+    padding: 10px 65px 10px 10px;
+    @include under(sm) {
+        // min-height: calc(100vh - 108px);
+        min-height: calc(100vh - 82px);
+    }
+    &__container {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: calc(100vh - 40px);
+        width: 100%;
+        @include under(sm) {
+            // height: auto;
+            height: auto;
+            min-height: calc(100vh - 119px);
+        }
+
+        &#foundersContainer {
+            display: none;
+            .text {
+                width: 100%;
+                column-width: calc(29vw - 90px);
+                column-gap: 15px;
+                -moz-column-width: calc(29vw - 90px);
+                -moz-column-gap: 15px;
+                -webkit-column-width: calc(29vw - 90px);
+                -webkit-column-gap: 15px;
+                column-count: 3;
+                @include under(1200px) {
+                    column-width: calc(32vw - 90px);
+                    column-gap: 15px;
+                    -moz-column-width: calc(32vw - 90px);
+                    -moz-column-gap: 15px;
+                    -webkit-column-width: calc(32vw - 90px);
+                    -webkit-column-gap: 15px;
+                }
+                @include under(md-960) {
+                    column-width: calc(50vw - 90px);
+                    column-gap: 15px;
+                    -moz-column-width: calc(50vw - 90px);
+                    -moz-column-gap: 15px;
+                    -webkit-column-width: calc(50vw - 90px);
+                    -webkit-column-gap: 15px;
+                    column-count: 2;
+                }
+                @include under(sm) {
+                    column-width: initial;
+                    column-gap: initial;
+                    -moz-column-width: initial;
+                    -moz-column-gap: initial;
+                    -webkit-column-width: initial;
+                    -webkit-column-gap: initial;
+                    column-count: 1;
+                }
+            }
+        }
+
+        &#contactContainer {
+            display: none;
+            @include under(sm) {
+                // min-height: 80vh;
+                // background-color: purple;
+            }
+            .text {
+                width: 100%;
+                -moz-column-width: initial;
+                -moz-column-gap: initial;
+                -webkit-column-width: initial;
+                -webkit-column-gap: initial;
+                a {
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+            .about__content {
+                @include under(sm) {
+                    margin-bottom: 10px;
+
+                }
+            }
+        }
+
+        &.show {
+            display: flex !important;
+        }
+
+        &.hide {
+            display: none !important;
+        }
+    }
+
+    &__masa {
+        // min-height: calc(50vh - 30px);
+        height: 100%;
+        max-height: calc(50vh - 30px);
+        .title {
+            @extend %Akzi;
+            //font-size: 33vw;
+            font-size: calc(105vw / 4);
+            text-align: center;
+        }
+        &--logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        &--one {
+            // max-width: 331px;
+            width: 17vw;
+            max-width: 240px;
+            position: absolute;
+            // top: 98px;
+            // right: 11vw;
+            top: 20%;
+            right: 14.5%;
+            @include under(sm) {
+                top: 25px;
+            }
+        }
+
+        &--two {
+            // width: 31vw;
+            // max-width: 417px;
+            width: 27vw;
+            position: absolute;
+            top: 9%;
+            // top: 5%;
+            // right: 14%;
+            top: 10%;
+            right: 9%;
+            // @media screen and (max-height: 800px) {
+            //     top: 10%;
+            //     right: 9%;
+            // }
+            @include under(sm) {
+                top: 25px;
+            }
+        }
+
+        &--three {
+            width: 39vw;
+            max-width: 530px;
+            max-height: 83vh;
+            object-fit: contain;
+            position: absolute;
+            top: 1%;
+            right: 8%;
+            z-index: 1;
+            @include under(1460px) {
+                max-height: 60vh;
+                top: 14%;
+    right: 2%;
+            }
+
+            @include under(sm) {
+                top: 15px;
+                right: 0%;
+            }
+            @include under(sm) {
+                top: 15px;
+                right: 0%;
+            }
+        }
+    }
+
+    &__content {
+      &.contact{
+        p {
+
+          font-size: 18px;
+          line-height: 22px;
+            padding-top: 0px;
+            display: block;
+            // margin-block-start: 1em;
+            // margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            // &:first-child {
+            //     padding-top: 0;
+            // }
+        }
+      }
+        @extend %Nitti;
+        font-size: 12px;
+        line-height: 14px;
+        // padding: 0 10px;
+
+        // min-height: calc(50vh - 30px);
+        max-height: calc(50vh - 30px);
+        overflow-y: scroll;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: flex-start;
+        // justify-content: flex-end;
+        margin-top: 10px;
+        margin-bottom: 30px;
+        @include under(sm) {
+            max-height: 100%;
+            margin-top: 50px;
+        }
+
+        .text {
+            // -moz-column-count: 2;
+            // -moz-column-gap: 20px;
+            // -webkit-column-count: 2;
+            // -webkit-column-gap: 20px;
+            column-width: calc(50vw - 90px);
+            column-gap: 15px;
+            -moz-column-width: calc(50vw - 90px);
+            -moz-column-gap: 15px;
+            -webkit-column-width: calc(50vw - 90px);
+            -webkit-column-gap: 15px;
+            column-count: 2;
+            // overflow-y: scroll;
+            @include under(sm) {
+                -moz-column-width: initial;
+                -moz-column-gap: initial;
+                -webkit-column-width: initial;
+                -webkit-column-gap: initial;
+                column-width: initial;
+                column-gap: initial;
+                column-count: 1;
+            }
+            &.founders{
+
+                p{
+                    min-height: 155px;
+                }
+            }
+        }
+
+        h3 {
+            text-transform: uppercase;
+            padding-bottom: 12px;
+            font-size: 18px;
+        }
+
+        p {
+
+          font-size: 15px;
+          line-height: 18px;
+            padding-top: 15px;
+            display: block;
+            // margin-block-start: 1em;
+            // margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            // &:first-child {
+            //     padding-top: 0;
+            // }
+        }
+
+    }
+
+    &__footer {
+        position: absolute;
+        width: calc(100% - 20px);
+        min-height: 30px;
+        bottom: 0;
+        left: 10px;
+        border-top: 1px solid #fff;
+        @include under(sm) {
+            // width: calc(100% - 124px);
+            // width: 100%;
+            // position: initial;
+            position: fixed;
+            width: calc(100% - 124px);
+            min-height: 30px;
+            bottom: 0;
+            left: 10px;
+            border-top: 1px solid #fff;
+            background-color: #000;
+        }
+        ul {
+            width: 100%;
+            min-height: 30px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 95px;
+            @include under(sm) {
+                // padding-right: 105px;
+                padding-right: 0;
+            }
+        }
+        &-link {
+            @extend %Nitti;
+            font-size: 18px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+
+.masa__row {
+    background-color: #be4148;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.masa__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+img.masa__desktop {
+    width: 100%;
+    height: auto;
+}
+
+img.masa__mobile {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    
+    img.masa__desktop {
+        display: none;
+    }
+
+    img.masa__mobile {
+        display: block;
+    }
+}

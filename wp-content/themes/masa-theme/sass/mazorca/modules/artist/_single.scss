@@ -1,0 +1,393 @@
+/* S i n g l e   a r t i s t */
+
+/* Page */
+.single-artist {
+
+	/* single */
+	.artist-single {
+        display: flex;
+        @include under (sm) {
+            padding-top: 52px;
+        }
+
+		.sidebar {
+            background-color: c(white);
+            width: calc(#{$col-1} * 1);
+            min-width: 103px;
+            min-height: 100vh;
+            padding-top: 10px;
+            border-right: 1px solid black;
+            @include under(sm) {
+                width: 100%;
+                min-height: 36px;
+                border-right: 1px solid #fff;
+                padding: 10px 0 10px 10px;
+                position: fixed;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+            &__logo {
+                max-width: 82px;
+                margin: 0 auto;
+                @include under(sm) {
+                    margin: 0;
+                }
+            }
+
+            &__title {
+                @extend %Akzi;
+                color: c(black);
+                font-size: 23px;
+                text-align: center;
+            }
+		}
+
+		&__container {
+	    	background-color: c(white);
+		    width: 100%;
+		    height: 100vh;
+            // padding: 10px 0 10px 10px;
+            padding: 0px 0px 10px 10px;
+		    border-left: 1px solid c(black);
+            display: flex;
+
+            @include under (sm) {
+                // height: calc(100vh - 38px);
+                // overflow: hidden;
+                flex-direction: column;
+                border-left: none;
+                padding: 10px;
+                height: auto;
+            }
+
+		    .col-one {
+		    	width: 25%;
+                padding-right: 10px;
+                position: relative;
+                @include under (1080px) {
+                   width: 40%;
+                }
+                @include under (sm) {
+                    width: 100%;
+                    padding: 0px;
+                }
+		    }
+
+		    .col-two {
+		    	width: 75%;
+		    	height: calc(100vh - 10px);
+                overflow-y: scroll;
+                @include under (1080px) {
+                   width: 60%
+                }
+                @include under (sm) {
+                    width: 100%;
+                    height: auto;
+                }
+		    }
+	    }
+
+	    &__title {
+	        @extend %Akzi;
+	        font-size: 22px;
+            color: c(black);
+            margin-top: 10px;
+	        margin-bottom: 20px;
+	        text-transform: uppercase;
+	    }
+
+	    &__content {
+/*	    	width: calc(#{$col-1} * 4); */
+            @extend %Nitti;
+	        max-width: 670px;
+            // height: calc(100vh - 340px);
+            // max-height: calc(100vh - 394px);
+            max-height: calc(100vh - 360px);
+	        overflow-y: scroll;
+	        font-size: 18px;
+			line-height: 22px;
+            color: c(black);
+            // border-bottom: 1px solid black;
+			@include under (879px) {
+                max-height: calc(100vh - 400px);
+            }
+            @include under (sm) {
+                height: auto;
+                max-height: initial;
+                margin-bottom: 20px;
+            }
+            // @include under (xs) {
+            //     height: calc(100vh - 500px);
+            // }
+        }
+
+        &__list {
+            width: 100%;
+            max-width: 670px;
+            position: absolute;
+            bottom: 0;
+            @include under (sm) {
+                // position: relative;
+                display: none;
+            }
+
+            ul {
+                @extend %Akzi;
+                font-size: 13px;
+                text-transform: uppercase;
+                line-height: 16px;
+
+                li {
+
+                    a {
+
+                    }
+                }
+            }
+
+            &--mobile {
+                display: none;
+                width: 100%;
+
+                ul {
+                    @extend %Akzi;
+                    font-size: 11.42px;
+                    text-transform: uppercase;
+                    line-height: 18px;
+                    @include under(sm) {
+                        font-size: 22px;
+                        line-height: 25px;
+                    }
+
+                    li {
+
+                        a {
+
+                        }
+                    }
+                }
+
+                @include under(sm) {
+                    display: block;
+                }
+            }
+        }
+	}
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(253, 253, 253, 0.83);
+    align-items: center;
+    justify-content: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    // margin: 0 auto;
+    // width: 80%;
+
+    margin: 0 auto;
+    width: 80%;
+    // background: cadetblue;
+    height: 100vh;
+    padding: 50px 0 30px 0;
+
+    @extend %arrows-slick;
+}
+
+.open {
+    cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+    color: #231F20;
+    float: right;
+    font-size: 40px;
+    font-weight: lighter;
+    position: absolute;
+    display: block;
+    text-align: center;
+    width: 23px;
+    height: 23px;
+    right: 25px;
+    top: 15px;
+    z-index: 1;
+}
+
+.close:hover,
+.close:focus {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-gallery {
+    height: 100%;
+
+    .slide {
+        height: 100%;
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+
+        img {
+					cursor: pointer;
+            // height: 90%;
+            // object-fit: contain;
+
+            // height: 95%;
+            height: 90%;
+            object-fit: contain;
+            @include under(md) {
+                height: 85%;
+            }
+            @include under(sm) {
+                height: 80%;
+            }
+        }
+    }
+
+    ul.slick-dots {
+            display: none !important;
+
+            li {
+                button {
+                    // margin: 10px;
+                    // color: red;
+                    // font-size: 0;
+                    // width: 10px;
+                    // height: 10px;
+                    // padding: 0;
+                    // border: .5px solid black;
+                    // border-radius: 10px;
+                    background: transparent;
+                }
+            }
+        }
+        .slick-active {
+            button {
+                border: .5px solid c(yellow) !important;
+                background: c(yellow) !important;
+            }
+        }
+        .slick-initialized .slick-slide {
+            outline: none;
+        }
+}
+
+.slick-slide {
+    &:focus {
+        outline: 0;
+    }
+}
+
+.slick-list,
+.slick-track {
+    height: 100%;
+}
+
+div.galeria__slider--creditos {
+
+    @extend %Nitti;
+    font-size: 12.13px;
+    text-transform: uppercase;
+    justify-content: space-around;
+    align-items: center;
+    // height: 40px;
+    height: 10%;
+    margin-top: 13px;
+    margin-bottom: 36px;
+    @include under(md) {
+        height: 15%;
+    }
+    @include under(sm){
+        height: auto;
+        flex-direction: column;
+    }
+
+    p {
+			font-size: 12px;
+			line-height: 14px;
+			padding-left: 13px;
+        @include under(sm) {
+
+            padding-left: 13px;
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+div.galeria__slider--creditos-modal {
+
+    @extend %Nitti;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    // height: 40px;
+    height: 10%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @include under(md) {
+        height: 15%;
+    }
+    @include under(sm){
+        margin-top: 13px;
+        height: auto;
+        display: block;
+        text-align: unset;
+        flex-direction: column;
+    }
+
+    p {
+        @include under(sm) {
+            //padding: 5px 0;
+            padding-left: 13px;
+        }
+        a {
+            text-decoration: underline;
+        }
+    }
+}
+
+.vert_dad{
+    display: flex;
+}
+.vertical{
+	&:nth-child(1){
+		padding-right: 9px;
+	}
+	&:nth-child(2){
+		padding-left: 9px;
+	}
+	width: 50%;
+	//float: left;
+    //padding: 0 19px;
+	.box__aspect--imagen{
+		cursor: pointer;
+		//max-height: 643px;
+	}
+}
+.horizontal{
+
+	.box__aspect--imagen{
+		cursor: pointer;
+
+	}
+}

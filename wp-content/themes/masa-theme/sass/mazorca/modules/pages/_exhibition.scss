@@ -1,0 +1,162 @@
+.exhibition {
+    $col-1: 100%/12;
+
+    background-color: #fff;
+    // width: 100vw;
+    width: 100%;
+    min-height: 100vh;
+    color: #fff;
+    position: relative;
+    //espacio de menu
+    // padding: 0 114px 0 0;
+    // padding: 0 52px 0 0;
+    padding: 0 26px 0 0;
+    display: flex;
+
+    height: 100vh;
+    overflow: hidden;
+    @include under(sm) {
+        overflow: initial;
+        margin-top: 52px;
+    }
+
+    // &__sidebar {
+    //     background-color: #000;
+    //     width: calc(#{$col-1} * 1);
+    //     min-width: 103px;
+    //     min-height: 100vh;
+    //     padding-top: 10px;
+    //     @include under(sm) {
+    //         width: 100%;
+    //         min-height: 36px;
+    //         padding: 10px 0 10px 10px;
+    //         position: fixed;
+    //         top: 0;
+    //         left: 0;
+    //     }
+    //     &--logo {
+    //         max-width: 82px;
+    //         margin: 0 auto;
+    //         @include under(sm) {
+    //             margin: 0;
+    //         }
+    //     }
+    // }
+
+    &__container {
+        width: calc(#{$col-1} * 11);
+        padding: 10px 0 10px 10px;
+        @include under(sm) {
+            width: calc(8.33333% * 12);
+            // padding: 46px 0 10px 10px
+            padding: 0;
+        }
+    }
+
+    &__title {
+        @extend %Akzi;
+        font-size: 22px;
+        color: c(black);
+        margin-bottom: 20px;
+    }
+
+    &__sbtitle {
+        @extend %Nitti;
+        font-size: 14px;
+        color: c(black);
+        margin-bottom: 10px;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: row;
+        @include under(sm) {
+            flex-direction: column;
+        }
+    }
+
+    &__text {
+        $line-height: 17px;
+        width: calc(#{$col-1} * 4);
+        max-width: 480px;
+        height: calc(100vh - 85px);
+        overflow-y: scroll;
+        @extend %Nitti;
+        font-size: 14px;
+        line-height: $line-height;
+        color: c(black);
+        @include under(sm) {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            overflow: initial;
+        }
+
+        p {
+            padding-bottom: $line-height;
+        }
+    }
+
+    &__link {
+        text-transform: uppercase;
+        text-decoration: underline;
+        margin-top: 20px;
+        display: flex;
+    }
+
+    &__list {
+        -moz-column-width: 14vw;
+        -moz-column-gap: 15px;
+        -webkit-column-width: 14vw;
+        -webkit-column-gap: 15px;
+        @extend %Nitti;
+        font-size: 12.3px;
+        line-height: 15px;
+        color: c(black);
+
+        padding-bottom: 20px;
+        @include under(sm) {
+            -moz-column-width: initial;
+            -moz-column-gap: initial;
+            -webkit-column-width: initial;
+            -webkit-column-gap: initial;
+        }
+        .title {
+            font-size: 14px;
+            text-decoration: underline;
+            &.marg {
+                padding-bottom: 15px;
+                padding-top: 15px;
+            }
+        }
+
+        .subtitle {
+            padding-bottom: 15px;
+        }
+        .p1{
+          font-size: 14px;
+          line-height: 17px;
+        }
+    }
+
+    &__gallery {
+        width: calc(#{$col-1} * 8);
+        height: calc(100vh - 85px);
+        overflow-y: scroll;
+        padding: 0 10px 0 20px;
+        @include under(sm) {
+            width: 100%;
+            padding: 0;
+            overflow: initial;
+            height: auto;
+            margin-top: 20px;
+        }
+        ul li {
+            margin-bottom: 20px;
+            @include under(sm) {
+                margin-bottom: 10px;
+            }
+        }
+    }
+
+}

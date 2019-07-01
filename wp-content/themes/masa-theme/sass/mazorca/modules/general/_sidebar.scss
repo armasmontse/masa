@@ -1,0 +1,30 @@
+.sidebar {
+    background-color: #000;
+    width: calc(#{$col-1} * 1);
+    min-width: 103px;
+    min-height: 100vh;
+    padding-top: 10px;
+    @include under(sm) {
+        width: calc(100% - 104px);
+        min-height: 36px;
+        border-right: 1px solid #fff;
+        padding: 10px 0 10px 10px;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    &__logo {
+        max-width: 82px;
+        margin: 0 auto;
+        @include under(sm) {
+            margin: 0;
+        }
+    }
+
+    &__title {
+        @extend %Akzi;
+        color: c(white);
+        font-size: 23px;
+        text-align: center;
+    }
+}

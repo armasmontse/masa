@@ -1,0 +1,47 @@
+.atomos{
+
+	header#header,
+	footer.footer {
+		display: none !important;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6,
+	p,
+	a,
+	form,
+	ul,
+	span,
+	div {
+		margin: 40px;
+	}
+
+
+
+}
+
+// T í t u l o s
+.atomos__titulo {
+	@extend %Akzi;
+	font-size: 22px;
+}
+
+// P á r r a f o
+.atomos__parrafo {
+	@extend %Nitti;
+	font-size: 12.3px;
+}
+
+// B o t ó n
+.atomos__boton-base {
+	
+}
+
+// M e n ú
+
+
+// F o o t e r

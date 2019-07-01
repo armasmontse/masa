@@ -1,0 +1,23 @@
+//_________________________ Config:Fuentes _________________________ \\
+
+/**
+ * Declare fonts using the Mixin
+ */
+// declara-font-face($font-family, $font-filename, $font-weight: normal, $font-style: normal, $font-stretch: normal)
+
+@include declara-font-face(Akzidenz, '../fonts/Akzidenz/AkzidenzGroteskBQ-BoldExt', bold, normal);
+@include declara-font-face(Nitti, '../fonts/Nitti/Nitti-Light', 300, normal);
+
+
+
+/// Refer to font families through mapped variables.
+/// Font families must be written as lists, that is, between parenthesis.
+
+$fonts:(
+	akzi:			('Akzidenz', sans-serif),
+	nitti: 			('Nitti', sans-serif),
+);
+
+@function f($font) {
+	@return map-get($fonts, $font);
+}
